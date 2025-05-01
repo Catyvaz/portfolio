@@ -1,0 +1,78 @@
+
+body {
+    background-color: black;
+}
+
+.container_datos{
+    text-align: center;
+}
+.texto_cambia {
+    position: relative;
+    width: 100%; /* o lo que necesites */
+    height: 45%;
+    overflow: hidden;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }
+.texto_cambia span {
+    position: absolute;
+    left: 35%;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide 4s infinite;
+    white-space: nowrap;
+    text-shadow: 12px 15px 20px rgb(100, 17, 114);
+}
+
+.texto_cambia span:nth-child(1) {
+animation-delay: 0s;
+}
+
+.texto_cambia span:nth-child(2) {
+animation-delay: 2s;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    40% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+.container_datos > p{
+    text-align: center;
+    font-size: 18px;
+}
+
+#contacto a{
+    margin: 10px;
+    text-decoration: none;
+}
+  
+.container_imagen{
+    padding-right: 200px;
+}
+.container_imagen img{
+    height: 250px;
+    border-radius: 15px;
+    border: 2px solid rgb(100, 17, 114);
+    box-shadow: 12px 15px 20px rgb(100, 17, 114);
+}
+
+

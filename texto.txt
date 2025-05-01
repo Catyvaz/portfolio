@@ -1,0 +1,18 @@
+.hero-header {
+    background-image: url('Diseño\ sin\ título\ \(1\).png'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el área */
+    background-position: center; /* Centra la imagen */
+    position: relative; /* Necesario para el overlay */
+    color: white; /* Asegura que el texto sea legible */
+}
+
+.hero-header img {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: 220px; /* Asegúrate de que sea cuadrada */
+    border-radius: 25px; /* Bordes redondeados */
+    border: 3px solid #ffffff00; /* Borde blanco (puedes cambiar el color) */
+    object-fit: cover; /* Asegura que la imagen se ajuste al recuadro */
+}
+<a href="https://www.flaticon.es/iconos-gratis/github" title="github iconos">Github iconos creados por Pixel perfect - Flaticon</a>
+
+<div> Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect"> Pixel perfect </a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es'</a></div>
