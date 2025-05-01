@@ -3,6 +3,16 @@ body {
     background-color: black;
 }
 
+h2{
+    color: rgb(113, 12, 184);
+}
+
+#header {
+    background-color:black;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .container_datos{
     text-align: center;
 }
@@ -20,17 +30,17 @@ body {
     left: 35%;
     opacity: 0;
     transform: translateX(100%);
-    animation: slide 4s infinite;
+    animation: slide 8s infinite; /* Incrementa la duración de la animación */
     white-space: nowrap;
     text-shadow: 12px 15px 20px rgb(100, 17, 114);
 }
 
 .texto_cambia span:nth-child(1) {
-animation-delay: 0s;
+    animation-delay: 0s;
 }
 
 .texto_cambia span:nth-child(2) {
-animation-delay: 2s;
+    animation-delay: 4s; /* Ajusta el retraso para que coincida con la nueva duración */
 }
 
 @keyframes slide {
@@ -66,13 +76,76 @@ animation-delay: 2s;
 }
   
 .container_imagen{
-    padding-right: 200px;
+    padding-right: 2%;
 }
 .container_imagen img{
     height: 250px;
     border-radius: 15px;
     border: 2px solid rgb(100, 17, 114);
-    box-shadow: 12px 15px 20px rgb(100, 17, 114);
+    box-shadow: 18px 15px 80px rgb(92, 13, 108);
+}
+
+.container_sobre_mi{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#tecnologias{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+.carousel-container {
+    overflow: hidden;
+    width: 60%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carousel-track {
+    display: flex;
+    width: calc(200px * 13); /* Ajustá según la cantidad de logos */
+    animation: scroll 27s linear infinite;
+}
+
+.carousel-track img {
+    width: 80px;
+    height: auto;
+    margin: 0 20px;
+    filter: drop-shadow(0 0 4px #00000099);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #dbd7d7; /* Gris claro */
+        color: black;
+    }
+    #header {
+        background-color: #d3d3d3;
+    }
+    p{
+        color: black;
+    }
+    h1{
+        color: black;
+    }
+    span {
+        color: black;
+    }
+
+    #tecnologias {
+        color: black;
+    }
+}

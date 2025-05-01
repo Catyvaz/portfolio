@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,7 +41,7 @@
                 <p>Construyendo soluciones, descubriendo errores… y mi propio camino en la tecnología.</p>
                 <section id="contacto">
                     <div class="container text-center">
-                        <a href="https://github.com/Catyvaz" >
+                        <a href="https://github.com/Catyvaz">
                             <img src="github.png" alt="GitHub" style="width:30px; height:auto;">
                         </a>
                         <a href="https://www.linkedin.com/in/caty-bustos-vazquez">
@@ -51,7 +53,7 @@
                     </div>
                 </section>
             </div>
-            <div class="container_imagen col-5">
+            <div class="container_imagen col-5 col-sm-none">
                 <img src="imagenPortada.jpg" alt="Foto de perfil">
             </div>
         </div>
@@ -59,10 +61,10 @@
     </header>
 
     <!-- Sobre mí -->
-    <section id="sobre-mi" class="py-5 bg-dark text-white">
+    <section id="sobre-mi" class="py-5 text-white">
         <div class="container_sobre_mi">
             <h2 class="text-center mb-4">Sobre mí</h2>
-            <p class="text-center ms-5">Soy Catherine Bustos Vazquez, estudiante en el último año de la tecnicatura en
+            <p class="text-center">Soy Catherine Bustos Vazquez, estudiante en el último año de la tecnicatura en
                 Desarrollo de Software. Me especializo en testing y desarrollo back-end, con conocimientos en Java,
                 Python, Selenium, bases de datos y herramientas como Git, Jira y Trello. Actualmente amplío mi formación
                 en automatización de pruebas y tecnologías web como JavaScript, TypeScript y HTML/CSS. Me apasiona
@@ -90,7 +92,7 @@
     </section>
 
     <div class="row ms-5">
-        <section id="eduacion" class="py-5 col-md-6">
+        <section id="eduacion" class="py-5">
             <div class="contenedor text-start mb-3 ms-5 p">
                 <h2 class="mb-4">Educación</h2>
                 <h4>Testeador de Software - QA Manager</h4>
@@ -99,35 +101,48 @@
                 <p class="lugar_fecha">Instituto Walt Whitman | Villa Carlos Paz | 2008-2018</p>
             </div>
         </section>
-        <section id="tecnologias" class="py-5 col-md-6">
-            <div class="contenedor text-start mb-3">
-                <h2 class="mb-4">Tecnologías</h2>
-            </div>
-        </section>
+
     </div>
+    <section id="tecnologias" class="py-5">
+        <h2 class="mb-4">Tecnologías</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="pythoned.png" alt="Python">
+                <img src="css-3.png" alt="CSS3">
+                <img src="html-5.png" alt="HTML5">
+                <img src="typescript.png" alt="TypeScript">
+                <img src="git.png" alt="Git">
+                <img src="github.png" alt="GitHub">
+                <img src="java.png" alt="Java">
+                <img src="mysql.png" alt="MySQL">
+
+                <img src="pythoned.png" alt="Python">
+                <img src="css-3.png" alt="CSS3">
+                <img src="html-5.png" alt="HTML5">
+                <img src="typescript.png" alt="TypeScript">
+                <img src="git.png" alt="Git">
+                <img src="github.png" alt="GitHub">
+                <img src="java.png" alt="Java">
+                <img src="mysql.png" alt="MySQL">
+            </div>
+        </div>
+    </section>
 
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <div class="container">
             <footer class="py-3 my-4">
-              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#header" class="nav-link px-2 text-body-secondary">Inicio</a></li>
-                <li class="nav-item"><a href="#sobre-mi" class="nav-link px-2 text-body-secondary">Sobre mí</a></li>
-                <li class="nav-item"><a href="#proyectos" class="nav-link px-2 text-body-secondary">Proyectos</a></li>
-              </ul>
-              <p class="text-center text-body-secondary">&copy; 2025 Catherine Bustos Vazquez. Todos los derechos reservados.</p>
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3 text">
+                    <li class="nav-item me-3"><a class="nav-link text-white" href="#header">Inicio</a></li>
+                    <li class="nav-item me-3"><a class="nav-link text-white" href="#sobre-mi">Sobre mí</a></li>
+                    <li class="nav-item me-3"><a class="nav-link text-white" href="#proyectos">Proyectos</a></li>
+                </ul>
+                <p>&copy; 2025 Catherine Bustos Vazquez. Todos los derechos
+                    reservados.</p>
             </footer>
         </div>
-        
     </footer>
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            &copy; 2025 Catherine Bustos Vazquez. Todos los derechos reservados.
-        </div>
-    </footer>
-
 </body>
 
 </html>
