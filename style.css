@@ -4,13 +4,13 @@ body {
 }
 
 h2{
-    color: rgb(113, 12, 184);
+    color: rgb(100, 14, 161);
 }
 
 #header {
     background-color:black;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .container_datos{
@@ -71,11 +71,28 @@ h2{
 }
 
 #contacto a{
-    margin: 15px;
+    margin: 10px;
     text-decoration: none;
 }
 
-.redes_contacto img:hover{
+#email{
+    width: 40%;
+    height: 35px;
+    border: 2px solid rgb(100, 17, 114);
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.redes_contacto button{
+    background-color: black;
+    width: auto;
+    height: auto;
+    border: 1px solid rgb(100, 17, 114);
+    border-radius: 10px;
+    background-color: black;
+}
+.redes_contacto button:hover{
     transform: scale(1.1);
     filter: drop-shadow(5px 5px 5px rgb(93, 13, 110));
 }
@@ -91,8 +108,8 @@ h2{
 }
 
 .container_sobre_mi{
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 #tecnologias{
@@ -110,8 +127,8 @@ h2{
 
 .carousel-track {
     display: flex;
-    width: calc(200px * 13); /* Ajustá según la cantidad de logos */
-    animation: scroll 27s linear infinite;
+    width: calc(200px * 11); /* Ajustá según la cantidad de logos */
+    animation: scroll 23s linear infinite;
 }
 
 .carousel-track img {
