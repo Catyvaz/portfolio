@@ -71,8 +71,13 @@ h2{
 }
 
 #contacto a{
-    margin: 10px;
+    margin: 15px;
     text-decoration: none;
+}
+
+.redes_contacto img:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(5px 5px 5px rgb(93, 13, 110));
 }
   
 .container_imagen{
@@ -82,7 +87,7 @@ h2{
     height: 250px;
     border-radius: 15px;
     border: 2px solid rgb(100, 17, 114);
-    box-shadow: 18px 15px 80px rgb(92, 13, 108);
+    box-shadow: 18px 15px 80px rgb(93, 13, 110);
 }
 
 .container_sobre_mi{
