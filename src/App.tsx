@@ -6,6 +6,7 @@ import { SobreMi } from "./components/sobreMi";
 import { Tecnologias } from "./components/tecnologias";
 import { Proyectos } from "./components/proyectos";
 import { Educacion } from "./components/educacion";
+import { Footer } from "./components/footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Proyectos/>
         <Educacion/>
       </div>
+      <Footer />
       <ToastContainer />
     </>
   );
