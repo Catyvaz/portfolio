@@ -66,7 +66,7 @@ export const Presentacion = () => {
           />
           <BotonesDatos
             icono={ContactPageIcon}
-            enlace="public\Desarrolladora Fullstack - Catherine Bustos Vazquez.pdf"
+            enlace="Catherine Bustos Vazquez - Desarrolladora de Software.pdf"
             descripcion="Curriculum Catherine Bustos Vazquez"
           />
           <BotonesDatos
