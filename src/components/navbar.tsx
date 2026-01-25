@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "../styles/navbar.css";
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="navbar">
       <div className="contenedor-elementos">
@@ -9,11 +12,17 @@ export const Navbar = () => {
             href="/"
             className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
           >
-            Catherine Bustos Vazquez
+            Caty
           </a>
         </div>
 
-        <div className="elementos-lista">
+        <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
+          <span className="hamburger"></span>
+          <span className="hamburger"></span>
+          <span className="hamburger"></span>
+        </button>
+
+        <div className={`elementos-lista ${isOpen ? "open" : ""}`}>
           <ul className="barra-opciones">
                 <li>
                   <a href="#inicio" className="nav-element text-secondary">

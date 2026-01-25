@@ -32,18 +32,11 @@ export const Educacion = () => {
     }
   };
 
-  const extractPrimaryYear = (periodo: string) => {
-    const match = periodo.match(/\d{4}/);
-    return match ? match[0] : periodo;
-  };
-
   return (
     <section id="educacion" className="educacion-section">
-      <div className="educacion-header">
         <h2>Educación</h2>
-      </div>
 
-      <Timeline position="right" className="educacion-timeline">
+      <Timeline className="educacion-timeline">
         {educacionData.map((item, index) => {
           const isLast = index === educacionData.length - 1;
           const isInProgress = item.estado === "En curso";
@@ -51,9 +44,6 @@ export const Educacion = () => {
           return (
             <TimelineItem key={`${item.titulo}-${item.periodo}`}>
               <TimelineOppositeContent className="educacion-periodo">
-                <Typography variant="body2" color="text.secondary">
-                  {extractPrimaryYear(item.periodo)}
-                </Typography>
                 <Typography variant="subtitle2">{item.periodo}</Typography>
               </TimelineOppositeContent>
               <TimelineSeparator>

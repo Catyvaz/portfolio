@@ -1,66 +1,45 @@
-/* Professional contact button styling */
-.botones,
-.botones.MuiButton-root,
-.botones.MuiButton-contained,
-.botones.MuiButton-containedSecondary {
-    /* Reset and typography */
-    text-transform: none;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-
-    /* Layout */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 18px;
-    border-radius: 999px; /* pill */
-
-    /* Visuals */
-        background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #c026d3 100%);
-    color: #fff !important;
-    box-shadow: 0 6px 16px rgba(147, 51, 234, 0.35);
-    border: none;
-
-    /* Transitions */
-    transition: transform 120ms ease, box-shadow 200ms ease, filter 200ms ease;
+.botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  padding: 10px 18px;
+  transition:
+    transform 120ms ease,
+    box-shadow 200ms ease,
+    filter 200ms ease;
 }
 
-.botones:hover,
-.botones.MuiButton-root:hover,
-.botones.MuiButton-contained:hover,
-.botones.MuiButton-containedSecondary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 22px rgba(147, 51, 234, 0.45);
-    filter: brightness(1.03);
+.botones:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(147, 51, 234, 0.45);
+  filter: brightness(1.03);
 }
 
-.botones:active,
-.botones.MuiButton-root:active,
-.botones.MuiButton-contained:active,
-.botones.MuiButton-containedSecondary:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.35);
-    filter: brightness(0.98);
+.botones:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.35);
+  filter: brightness(0.98);
 }
 
 .botones:focus-visible,
 .botones.Mui-focusVisible {
-    outline: 3px solid rgba(147, 51, 234, 0.35);
-    outline-offset: 2px;
+  outline: 3px solid rgba(147, 51, 234, 0.35);
+  outline-offset: 2px;
 }
 
 /* Icon sizing and alignment */
 .botones .icono {
-    width: 22px;
-    height: 22px;
+  width: 22px;
+  height: 22px;
+  margin: 0%;
+  padding: 0%;
 }
 
-/* Make sure text doesn't wrap awkwardly on small screens */
 @media (max-width: 480px) {
-    .botones {
-        padding: 10px 14px;
-        gap: 8px;
-        font-size: 0.95rem;
-    }
+  .botones {
+    padding: 10px 14px;
+    gap: 8px;
+    font-size: 0.95rem;
+  }
 }

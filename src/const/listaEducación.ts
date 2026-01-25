@@ -11,8 +11,8 @@ export const educacionData: EducacionItem[] = [
   {
     titulo: "Tecnicatura en Desarrollo de Software",
     institucion: "Instituto A. U. Illia",
-    periodo: "2023 – Actualidad",
-    estado: "En curso",
+    periodo: "2023 – 2025",
+    estado: "Completado",
     tipo: "carrera",
     descripcion: "Formación integral en desarrollo de software, programación y tecnologías modernas."
   },

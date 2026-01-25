@@ -1,88 +1,90 @@
 :root {
-  --timeline-accent: #a855f7;
-  --timeline-accent-strong: #7c3aed;
-  --timeline-muted: #d6bcfa;
+  --color-glass-bg: rgba(30, 27, 75, 0.6);
+  --color-glass-border: rgba(139, 92, 246, 0.3);
+  --color-text-main: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent: #a78bfa;
+  --color-accent-hover: #c4b5fd;
+  --timeline-accent: var(--color-accent);
   --timeline-surface: rgba(255, 255, 255, 0.07);
+  --shadow-card:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .educacion-section {
   padding: 4rem 0;
-  background: radial-gradient(
-    circle at top,
-    rgba(168, 85, 247, 0.08),
-    transparent 50%
-  );
-}
-
-.educacion-header {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
-}
-
-.educacion-header h2 {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: 0.5rem;
-}
-
-.educacion-header p {
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.5;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .educacion-timeline {
-  padding: 0;
-  margin-left: -2.5rem;
-  max-width: 960px;
-}
-
-.educacion-content {
-  padding-left: 0.5rem;
+  width: 100%;
 }
 
 .educacion-periodo {
+  opacity: 0.9;
   text-align: right;
-  min-width: 110px;
-  color: rgba(255, 255, 255, 0.65);
+  min-width: 2rem;
+  color: var(--color-text-muted);
+}
+
+.educacion-periodo .MuiTypography-body2 {
+  color: var(--color-text-muted) !important;
 }
 
 .educacion-periodo .MuiTypography-subtitle2 {
-  font-weight: 600;
-  color: #fff;
+  font-weight: 800;
+  color: var(--color-accent);
 }
 
 .educacion-dot {
   border: none;
-  background: var(--timeline-accent);
-  box-shadow: 0 0 18px rgba(168, 85, 247, 0.4);
+  background: var(--timeline-accent) !important;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.5) !important;
   color: #fff;
 }
 
 .educacion-dot.dot-active {
-  background: var(--timeline-accent-strong);
+  background: #7c3aed !important;
   animation: pulseGlow 2.2s infinite;
 }
 
 .educacion-dot.dot-complete {
-  background: var(--timeline-accent);
+  background: var(--timeline-accent) !important;
+}
+
+.educacion-dot svg {
+  color: #fff;
 }
 
 .educacion-connector {
   background: linear-gradient(to bottom, var(--timeline-accent), transparent);
+  background-color: var(--color-glass-border) !important;
   width: 2px;
 }
 
-.css-1gtchvp-MuiPaper-root {
-  background-color: transparent;
+.educacion-card {
+  background-color: var(--color-glass-bg) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border) !important;
+  border-radius: 16px !important;
+  padding: 1rem;
+  box-shadow: var(--shadow-card) !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease !important;
+  min-width: 500px;
+  color: var(--color-text-main) !important;
 }
 
-.educacion-card {
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(99, 55, 162, 0.3);
-  backdrop-filter: blur(6px);
-  min-width: 600px;
-  background-color: none;
+.educacion-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.3) !important;
 }
 
 .educacion-card-header {
@@ -94,24 +96,17 @@
   min-width: 0;
 }
 
-.educacion-card .MuiChip-root {
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.educacion-card .MuiChip-root {
-  font-weight: 600;
-}
-
 .educacion-titulo {
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
-  color: #fff;
+  font-weight: 700 !important;
+  color: var(--color-text-main) !important;
+  margin-bottom: 0.25rem !important;
+  font-size: 1.25rem !important;
 }
 
 .educacion-institucion {
-  color: rgba(255, 255, 255, 0.72);
-  font-weight: 500;
+  color: var(--color-accent) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .educacion-descripcion {
@@ -119,8 +114,21 @@
   align-items: center;
   gap: 0.35rem;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-muted) !important;
   font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.educacion-card .MuiChip-root {
+  background-color: rgba(167, 139, 250, 0.15) !important;
+  color: var(--color-accent-hover) !important;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.educacion-card .MuiChip-icon {
+  color: var(--color-accent-hover) !important;
 }
 
 @keyframes pulseGlow {
@@ -136,6 +144,9 @@
 }
 
 @media (max-width: 900px) {
+  .educacion-card {
+    min-width: 400px;
+  }
   .educacion-periodo {
     flex-basis: 90px;
   }
@@ -153,14 +164,31 @@
   .educacion-periodo {
     text-align: left;
     padding-bottom: 0.75rem;
+    min-width: auto;
   }
 
   .educacion-timeline .MuiTimelineItem-root {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "periodo dot"
+      "card card";
+    justify-content: center;
+  }
+
+  .educacion-timeline .MuiTimelineOppositeContent-root {
+    text-align: left;
+    padding-left: 1rem;
+    grid-area: periodo;
+  }
+
+  .educacion-timeline .MuiTimelineItem-root {
+    align-items: center;
   }
 
   .educacion-card {
-    margin-left: 1.5rem;
-    min-width: auto;
+    grid-area: card;
+    margin-left: 0;
+    min-width: 70dvw;
   }
 }

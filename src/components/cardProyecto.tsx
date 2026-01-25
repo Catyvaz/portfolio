@@ -1,13 +1,6 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  Chip,
-} from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import type { ProyectoProps } from "../const/listaProyectos";
+import "../styles/proyectos.css";
 
 interface CardProyectoProps {
   proyecto: ProyectoProps;
@@ -15,61 +8,52 @@ interface CardProyectoProps {
   setSeleccionado: ProyectoProps | null;
 }
 
-export const CardProyecto = (props: CardProyectoProps) => {
+export const CardProyecto = ({ proyecto, abrirModal }: CardProyectoProps) => {
 
-  const getColorChip = (estado?: string) => {
-    return estado === "En curso" ? "primary" : "success";
+  const getEstadoClass = (estado?: string) => {
+    return estado === "En curso" ? "estado-en-curso" : "estado-finalizado";
   };
+
   return (
-    <Card
-      key={props.proyecto.id}
-      sx={{
-        maxWidth: 345,
-        cursor: "pointer",
-        "&:hover": { transform: "scale(1.05)", transition: "transform 0.3s" },
-        backgroundColor: "black",
-        border: "purple 1px solid",
-        borderRadius: "15px",
-      }}
-      onClick={() => props.abrirModal(props.proyecto)}
+    <div
+      className="tarjeta-proyecto"
+      onClick={() => abrirModal(proyecto)}
     >
-      <CardMedia
-        component="img"
-        height="200"
-        image={props.proyecto.imagen}
-        alt={props.proyecto.titulo}
-      />
-      <CardContent>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'white' }}>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.proyecto.titulo}
-          </Typography>
-          {props.proyecto.estado && (
-                      <Chip 
-                        label={props.proyecto.estado} 
-                        size="medium" 
-                        color={getColorChip(props.proyecto.estado)}
-                        variant="filled"
-                      />
-                    )}
+      <div className="imagen-proyecto-container">
+        <img
+          src={proyecto.imagen}
+          alt={proyecto.titulo}
+          className="imagen-proyecto"
+        />
+      </div>
+      
+      <div className="contenido-proyecto">
+        <div className="header-proyecto">
+          <h3 className="titulo-proyecto">{proyecto.titulo}</h3>
+          {proyecto.estado && (
+            <span className={`estado-badge ${getEstadoClass(proyecto.estado)}`}>
+              {proyecto.estado}
+            </span>
+          )}
         </div>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2, color: 'white' }}>
-          {props.proyecto.descripcionCorta}
-        </Typography>
 
-        <Box display="flex" flexWrap="wrap" gap={1}>
-          {props.proyecto.tecnologias.map((tech, index) => (
-            <Chip key={index} label={tech} size="small" variant="outlined" style={{color: "white"}}/>
+        <p className="descripcion-proyecto">
+          {proyecto.descripcionCorta}
+        </p>
+
+        <div className="tags-container">
+          {proyecto.tecnologias.map((tech, index) => (
+            <span key={index} className="tech-tag">
+              {tech}
+            </span>
           ))}
-        </Box>
+        </div>
 
-        <Box display="flex" alignItems="center" mt={2}>
-          <PlayArrowIcon color="primary" />
-          <Typography variant="caption" ml={1} color="white">
-            Click para ver detalles y video
-          </Typography>
-        </Box>
-      </CardContent>
-    </Card>
+        <div className="footer-proyecto">
+          <PlayArrowIcon fontSize="small" />
+          <span>Ver detalles y video</span>
+        </div>
+      </div>
+    </div>
   );
 };

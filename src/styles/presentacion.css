@@ -1,56 +1,60 @@
-h3{
+h3 {
   color: white;
 }
 
 .contenedor-presentacion {
   width: 100%;
+  height: 100dvh;
+  align-content: center;
+  justify-content: center;
+}
+
+.contenedor-card {
+  border-radius: 20px;
+  box-shadow: 0px 0px 50px #41328d;
+  padding: 3% 2%;
+  width: 50dvw;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     "hola hola foto"
     "carrusel carrusel foto"
-    "carrusel carrusel foto"
-    "frase frase foto"
-    "contacto contacto contacto";
-  padding: 5% 0%;
+    "tecnologia tecnologia foto"
+    "contacto contacto foto";
 }
 
 .presentacion-nombre {
   grid-area: hola;
   display: flex;
-  height: 4rem;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  font-size: 1.4rem;
+  justify-content: left;
+  align-items: left;
+  font-size: 1em;
   font-family: __Kumbh_Sans_e16533, __Kumbh_Sans_Fallback_e16533, sans-serif;
-  padding: 0% 10%;
 }
 
 .presentacion-titulos {
   grid-area: carrusel;
   position: relative;
-  width: 92%; /* o lo que necesites */
-  justify-self: center;
-  height: 5rem;
+  width: 28dvw;
+  height: 3rem;
   overflow: hidden;
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  text-align: center;
-  align-self: center;
+  justify-content: left;
+  margin: 1% 0%;
 }
 
 .presentacion-titulos span {
   position: absolute;
-  left: 20%;
   opacity: 0;
   transform: translateX(100%);
   animation: slide 8s infinite; /* Incrementa la duración de la animación */
   white-space: nowrap;
-  text-shadow: 12px 15px 20px rgb(100, 17, 114);
-  color: white;
+  text-shadow: 12px 15px 10px #41328d;
+  color: #dbd4ff;
 }
 
 .presentacion-titulos span:nth-child(1) {
@@ -64,7 +68,7 @@ h3{
 @keyframes slide {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
   10% {
     opacity: 1;
@@ -76,22 +80,30 @@ h3{
   }
   50% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
   100% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 }
 
-.presentacion-frase {
-  grid-area: frase;
-  justify-self: center;
+.ubicacion-tecnologias {
+  grid-area: tecnologia;
+  justify-self: flex-start;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  font-size: 0.8rem;
+  text-align: left;
+  font-size: 1rem;
   width: 70%;
+}
+
+.items-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3%;
+  margin: 1% 0%;
 }
 
 .presentacion-contactos {
@@ -100,15 +112,89 @@ h3{
   flex-direction: row;
   justify-content: center;
   padding-top: 6%;
-  gap: 3%;
+  gap: 5%;
 }
+
 .presentacion-foto {
   grid-area: foto;
+  align-self: center;
 }
 
 .presentacion-foto img {
-  width: 43dvh;
-  border-radius: 20px;
-  border: 2px solid rgb(100, 17, 114);
-  box-shadow: 15px 10px 75px rgb(93, 13, 110);
+  width: 18dvw;
+  border-radius: 20%;
+  border: 2px solid #41328d;
+}
+
+@media (max-width: 1024px) {
+  .contenedor-card {
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hola hola"
+      "carrusel carrusel"
+      "foto foto"
+      "tecnologia tecnologia"
+      "contacto contacto";
+  }
+
+  .presentacion-titulos {
+    width: 100%;
+  }
+
+  .presentacion-titulos span {
+    margin-left: 9%;
+  }
+
+  .ubicacion-tecnologias {
+    justify-self: center;
+    text-align: center;
+    width: 60%;
+  }
+
+  .presentacion-contactos {
+    width: 100%;
+  }
+
+  .presentacion-foto img {
+    width: 18dvh;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-presentacion {
+    width: 100dvw;
+    justify-items: center;
+  }
+  .contenedor-card {
+    width: 80dvw;
+  }
+  .presentacion-nombre {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .presentacion-titulos {
+    width: 100%;
+  }
+
+  .presentacion-titulos span {
+    margin-left: 3%;
+    font-size: 1.6rem;
+  }
+
+  .ubicacion-tecnologias {
+    justify-self: center;
+    text-align: center;
+    width: 80%;
+  }
+
+  .presentacion-contactos {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 5% 9%;
+  }
 }

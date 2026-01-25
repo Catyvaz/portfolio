@@ -1,18 +1,278 @@
+:root {
+  --color-glass-bg: rgba(30, 27, 75, 0.6);
+  --color-glass-border: rgba(139, 92, 246, 0.3);
+  --color-glass-highlight: rgba(139, 92, 246, 0.1);
+  --color-text-main: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent: #a78bfa;
+  --color-accent-hover: #c4b5fd;
+  --font-main: "Segoe UI", system-ui, sans-serif;
+  --shadow-card:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --radius-card: 16px;
+}
+
 .contenedor-sobre-mi {
+  display: flex;
+  min-height: 100dvh;
+  width: 90dvw;
+  max-width: 1500px;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  color: var(--color-text-main);
+}
+
+.contenedor-bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "sobre-mi sobre-mi sobre-mi sobre-mi extra-sobre-mi extra-sobre-mi"
+    "stack soft-skills soft-skills soft-skills aporte aporte"
+    "rol-objetivo rol-objetivo rol-objetivo aprendizaje aprendizaje aprendizaje";
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.seccion-bento {
+  background-color: var(--color-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-glass-border);
+  padding: 0.8rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.seccion-bento:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.bento-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.bento-header svg {
+  font-size: 1.75rem !important;
+}
+
+.titulo-bento {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  text-shadow: none;
+}
+
+.seccion-bento p,
+.contenido-texto p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.seccion-bento ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sobre-mi {
+  grid-area: sobre-mi;
+  justify-content: center;
+}
+.sobre-mi .titulo-bento {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+.sobre-mi p {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+}
+
+.extra-sobre-mi {
+  grid-area: extra-sobre-mi;
+  justify-content: center;
+}
+.extra-sobre-mi ul {
+  display: flex;
+  flex-direction: column;
+}
+.extra-sobre-mi li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1% 0%;
+}
+.icono-detalle {
+  color: var(--color-accent);
+  font-size: 2rem !important;
+}
+.detalle-titulo {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+.extra-sobre-mi p {
+  margin: 0;
+  color: var(--color-text-main);
+  font-weight: 500;
+  width: 100%;
+}
+
+.stack {
+  grid-area: stack;
+  text-align: center;
+}
+.stack .bento-header {
+  justify-content: left;
+}
+.lista-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.lista-stack li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  width: 80%;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: background 0.2s;
+}
+.lista-stack li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-accent);
+}
+
+.soft-skills {
+  grid-area: soft-skills;
+}
+.soft-skills ul {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2% 5%;
-  background-color: rgb(47, 38, 51);
-  border-radius: 50px 0;
+  height: 100%;
+  gap: 0.9rem;
+}
+.soft-skills li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: 95%;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: background 0.2s;
 }
 
-.lista-sobre-mi {
+.rol-objetivo {
+  grid-area: rol-objetivo;
+}
+.lista-objetivos {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.lista-objetivos li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+  width: 80%;
+}
+.lista-objetivos .resaltado {
+  color: var(--color-accent);
+  font-weight: 600;
+  min-width: 80px;
 }
 
-.lista-sobre-mi li {
-  color: rgb(255, 255, 255);
+.aporte {
+  grid-area: aporte;
+}
+.aporte .contenido-texto {
+  height: 100%;
+  justify-content: center;
+}
+
+.aporte p {
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  color: var(--color-text-main);
+}
+
+.aprendizaje {
+  grid-area: aprendizaje;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contenedor-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "sobre-mi sobre-mi"
+      "extra-sobre-mi extra-sobre-mi"
+      "soft-skills stack"
+      "rol-objetivo rol-objetivo"
+      "aprendizaje aporte";
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-sobre-mi {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .contenedor-bento {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sobre-mi"
+      "extra-sobre-mi"
+      "stack"
+      "rol-objetivo"
+      "soft-skills"
+      "aporte"
+      "aprendizaje";
+    gap: 1rem;
+  }
+
+  .lista-objetivos li {
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: flex-start;
+  }
+
+  .seccion-bento {
+    padding: 1.2rem;
+  }
 }
