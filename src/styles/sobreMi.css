@@ -208,7 +208,7 @@
   font-size: 0.95rem;
   color: var(--color-text-muted);
   flex-wrap: wrap;
-  width: 80%;
+  width: 95%;
 }
 .lista-objetivos .resaltado {
   color: var(--color-accent);
