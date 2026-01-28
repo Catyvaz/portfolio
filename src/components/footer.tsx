@@ -28,7 +28,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a href="Catherine Bustos Vazquez - Desarrolladora de Software.pdf" aria-label="Curricullum">
-                  Curricullum
+                  Curriculum
                 </a>
               </li>
             </ul>

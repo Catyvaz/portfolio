@@ -45,7 +45,7 @@ li {
 }
 
 li a {
-  color: #8771F5;
+  color: #8771f5;
   text-decoration: none;
 }
 
@@ -79,6 +79,7 @@ li a:hover {
   .navbar {
     width: 90%;
     border-radius: 15px;
+    top: 1%;
   }
 
   .contenedor-elementos {
@@ -115,6 +116,12 @@ li a:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
