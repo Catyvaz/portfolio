@@ -266,6 +266,10 @@
     gap: 1rem;
   }
 
+  .extra-sobre-mi li {
+    width: 90%;
+  }
+
   .lista-objetivos li {
     flex-direction: column;
     gap: 0.2rem;

@@ -27,7 +27,7 @@ export const SobreMi = () => {
               <FmdGoodTwoToneIcon className="icono-detalle" />
               <div>
                 <span className="detalle-titulo">Ubicación</span>
-                <p>Córdoba, Argentina (Remoto/Presencial)</p>
+                <p>Córdoba, Argentina (Remoto / Presencial)</p>
               </div>
             </li>
             <li>

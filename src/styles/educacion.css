@@ -189,10 +189,9 @@
     align-items: center;
   }
 
-  .educacion-periodo .MuiTypography-subtitle2{
+  .educacion-periodo .MuiTypography-subtitle2 {
     font-size: large;
   }
-
 
   .educacion-dot {
     margin: 0 !important;
@@ -215,5 +214,9 @@
   .educacion-card {
     margin-left: 0;
     min-width: 70dvw;
+  }
+
+  .css-1sohoek-MuiTimelineItem-root:nth-of-type(even) .MuiTimelineContent-root {
+  text-align: left !important;
   }
 }
