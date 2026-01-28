@@ -13,7 +13,7 @@
 
 .educacion-section {
   padding: 4rem 0;
-  width: 100%;
+  width: 90dvw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,8 +26,9 @@
 .educacion-periodo {
   opacity: 0.9;
   text-align: right;
-  min-width: 2rem;
+  min-width: 3rem;
   color: var(--color-text-muted);
+  align-items: center;
 }
 
 .educacion-periodo .MuiTypography-body2 {
@@ -35,8 +36,9 @@
 }
 
 .educacion-periodo .MuiTypography-subtitle2 {
-  font-weight: 800;
+  font-weight: 600;
   color: var(--color-accent);
+  margin-top: 0.6rem;
 }
 
 .educacion-dot {
@@ -100,7 +102,7 @@
   font-weight: 700 !important;
   color: var(--color-text-main) !important;
   margin-bottom: 0.25rem !important;
-  font-size: 1.25rem !important;
+  font-size: 1.2rem !important;
 }
 
 .educacion-institucion {
@@ -130,6 +132,23 @@
 .educacion-card .MuiChip-icon {
   color: var(--color-accent-hover) !important;
 }
+.educacion-descripcion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.data-tag {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  transition: all 0.2s;
+}
 
 @keyframes pulseGlow {
   0% {
@@ -154,7 +173,8 @@
 
 @media (max-width: 680px) {
   .educacion-section {
-    padding: 3rem 0;
+    padding: 2rem 0;
+    width: 90dvw;
   }
 
   .educacion-timeline {
@@ -163,31 +183,36 @@
 
   .educacion-periodo {
     text-align: left;
-    padding-bottom: 0.75rem;
+    padding: 0 0 0.5rem 6px !important;
     min-width: auto;
-  }
-
-  .educacion-timeline .MuiTimelineItem-root {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "periodo dot"
-      "card card";
-    justify-content: center;
-  }
-
-  .educacion-timeline .MuiTimelineOppositeContent-root {
-    text-align: left;
-    padding-left: 1rem;
-    grid-area: periodo;
-  }
-
-  .educacion-timeline .MuiTimelineItem-root {
+    display: flex;
     align-items: center;
   }
 
+  .educacion-periodo .MuiTypography-subtitle2{
+    font-size: large;
+  }
+
+
+  .educacion-dot {
+    margin: 0 !important;
+    display: none !important;
+  }
+
+  .educacion-timeline .MuiTimelineItem-root {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .css-1sohoek-MuiTimelineItem-root:nth-of-type(even) {
+    flex-direction: column !important;
+  }
+
+  .educacion-connector {
+    display: none !important;
+  }
+
   .educacion-card {
-    grid-area: card;
     margin-left: 0;
     min-width: 70dvw;
   }
